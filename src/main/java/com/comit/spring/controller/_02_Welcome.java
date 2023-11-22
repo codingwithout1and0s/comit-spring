@@ -9,7 +9,7 @@ public class _02_Welcome {
 
 	@GetMapping("/welcome")
 	@ResponseBody String welcome() {
-		return "<htm>l"
+		return "<html>"
 				+ "<body>"
 				+ "<h1>Hello World</h1>"
 				+ "<a href='http://www.google.com>Google</a>"
