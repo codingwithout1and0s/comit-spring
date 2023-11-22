@@ -8,15 +8,16 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class _04_ParamsController {
 
-	@GetMapping("/parameters")
-	ModelAndView hello(@RequestParam String first, @RequestParam String second) {
-		System.out.println("First parameter: " + first);
-		System.out.println("Second parameter: " + second);
-		
-		ModelAndView mv = new ModelAndView("parameters"); //HTML Template Name
-		mv.addObject("first", first);
-		mv.addObject("second", second);
-		
-		return mv;
-	}
+    @GetMapping("/params")
+    ModelAndView hello(@RequestParam String first, @RequestParam String second) {
+        
+    	System.out.println("First Parameter: " + first);
+        System.out.println("Second Parameter: " + second);
+        
+        ModelAndView mv = new ModelAndView("parameters"); // HTML Template name.
+        mv.addObject("first", first);
+        mv.addObject("second", second);
+        
+        return mv;
+    }
 }

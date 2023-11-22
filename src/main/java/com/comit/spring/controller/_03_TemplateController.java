@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class _03_TemplateController {
 
-	@GetMapping("/parameters")
+	@GetMapping("/template")
 	String Welcome() {
 		System.out.println("test its working :)");
 		return "welcome";
