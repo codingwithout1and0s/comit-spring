@@ -1,17 +1,17 @@
 package com.comit.spring.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.ModelAndView;
 
-import jakarta.servlet.http.HttpServletRequest;
+import com.comit.spring.bean.User;
 
 @Controller
 public class _06_FormController {
 
     @GetMapping("/form")
-    String show() {
+    String show(User user) {
         System.out.println("Showing Form");
 
         return "user_form";
@@ -19,17 +19,10 @@ public class _06_FormController {
 
 
     @PostMapping("/form")
-    String process(HttpServletRequest req, Model model) {
+    ModelAndView process(User user) {
 
-        String first = req.getParameter("first");
-        String second = req.getParameter("second");
+        System.out.println("User: " + user);
 
-        System.out.println("First Parameter: " + first);
-        System.out.println("Second Parameter: " + second);
-
-        model.addAttribute("first", first);
-        model.addAttribute("second", second);
-
-        return "parameters";
+        return new ModelAndView("user_table","user",user);
     }
 }

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>User Table Exmpale</title>
+</head>
+<body>
+  <h1>HTML User Table Thymeleaf Example</h1>
+  <br>
+  <table border="1">
+	  <tr>
+		  <th>Field Name</th>
+		  <th>Value</th>
+	  </tr>
+	  <tr>
+		  <td>First Name</td>
+		  <td td:text="${user.firstName}"></td>
+		  <td>Last Name</td>
+		  <td td:text="${user.lastName}"></td>
+		  		  <td>Email</td>
+		  <td td:text="${user.email}"></td>
+		  		  <td>Date of Birth</td>
+		  <td td:text="${}"></td><!--#dates.format(date, 'dd/MM/yyyy')-->
+	  </tr>
+  </table>
+  <br>
+  <a th:href="@{/form}">Try Again</a>
+  </form>
+</body>
+</body>
+</html>
